@@ -6,44 +6,6 @@
 #include<map>
 
 using namespace std;
-/*
-void dfs(int leftright,int nownode,int nextnode, int longeur, priority_queue<int,list<int>> & q,const int & size, const vector<vector<pair<int,int>>> & lines, vector<int> & ind){
-    if(ind[nownode]==2){return;}
-    ind[nownode]=1; int flag=1;
-    if(leftright){
-        for(int i=0;i<size;i++){
-            if(!ind[i]){
-                if(lines[i][0].first==nextnode){
-                    flag=0;
-                    dfs(0,i,lines[i][0].second,longeur+lines[i][0].second-lines[i][0].first,q,size,lines,ind);
-                }
-                else if(lines[i][0].second==nextnode){
-                    flag=0;
-                    dfs(1,i,lines[i][0].second,longeur+lines[i][0].second-lines[i][0].first,q,size,lines,ind);
-                }
-            }
-        }
-    }
-    else{
-        for(int i=0;i<size;i++){
-            if(!ind[i]){
-                if(lines[i][1].first==nextnode){
-                    flag=0;
-                    dfs(0,i,lines[i][1].second,longeur+lines[i][0].second-lines[i][0].first,q,size,lines,ind);
-                }
-                else if(lines[i][1].second==nextnode){
-                    flag=0;
-                    dfs(1,i,lines[i][1].first,longeur+lines[i][0].second-lines[i][0].first,q,size,lines,ind);
-                }
-            }
-        }
-    }
-    ind[nownode]=2;
-    if(flag&&longeur>q.top()){
-            q.pop();
-            q.push(longeur);
-    }
-}*/
 
 void dfs_l(const int i,long int leftmost,long int rightmost, priority_queue<long int,vector<long int>> & q, const int & size,const vector<pair<vector<long int>,vector<long int>>> & I,vector<bool> & indicator){
     indicator[i]=true;  int flag=1;
